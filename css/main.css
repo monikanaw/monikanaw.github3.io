@@ -104,10 +104,12 @@ p {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   padding-left: 1em;
 }
-.header-nav a {
+.header-nav a,
+.drop-trigger {
   color: #fff;
 }
-.nav-links a {
+.nav-links a,
+.drop-trigger {
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
@@ -138,7 +140,6 @@ p {
   box-sizing: border-box;
   height: 90vh;
 }
-
 
 .full-hero:after {
   bottom: 2vh;
@@ -177,7 +178,6 @@ p {
   background-color: #000;
   color: #fff;
 }
-
 
 /* SOCIAL STYLES */
 
@@ -496,6 +496,40 @@ body {
 .post-byline {
   text-align: left
 }
+.dropdown {
+  position: relative;
+}
+.drop-trigger {
+  display: inline-block;
+  padding-right: 1.5em;
+  position: relative;
+}
+.drop-trigger:after {
+  border: 0.3em solid;
+  border-color: #fff transparent transparent;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0.3em;
+  width: 0;
+}
+.drop-menu {
+  display: none;
+  list-style: none;
+  padding: 1em 0 0;
+  position: absolute;
+  right: 0;
+  z-index: 9;
+}
+.drop-menu li {
+  background-color: #fff;
+}
+.drop-menu a {
+  color: #333;
+  display: block;
+}
+
 @media (max-width: 800px) {
   html {
     box-shadow: none;
@@ -554,14 +588,13 @@ body {
     margin: 0 10px 0 0;
     width: auto;
   }
-  .gallery .gallery-info {
+.gallery .gallery-info {
     flex: 1;
   }
   /* BLOG STYLES */
-   .blog-recent {
+.blog-recent {
      display: none;
    }
-   .blog-previews {
+.blog-previews {
      padding: 0;
    }
- 
